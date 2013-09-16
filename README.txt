@@ -1,6 +1,6 @@
-=== Connections Toolbar ===
-Contributors: shazahm1@hotmail.com 
-Donate link:connections-pro.com
+=== Connections Business Directory Toolbar ===
+Contributors: shazahm1@hotmail.com
+Donate link: connections-pro.com
 Tags: admin bar, adminbar, administration, connections
 Requires at least: 3.3
 Tested up to: 3.6
