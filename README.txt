@@ -28,7 +28,7 @@ This will only show up in the adminbar if the user logged in has the `manage_opt
 
 == Screenshots ==
 
-None at this time.
+[Screenshots can be found here.](http://connections-pro.com/add-on/toolbar/)
 
 == Changelog ==
 
