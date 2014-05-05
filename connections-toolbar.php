@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Plugin Name: Connections Toolbar
  * Plugin URI: http://connections-pro.com/
@@ -26,7 +26,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
- 
+
  if ( ! class_exists( 'CN_Toolbar' ) ) {
 
 	class CN_Toolbar {
@@ -60,9 +60,6 @@
 		 */
 		public static function getInstance() {
 
-			// Quick check to see if Connections is loaded.
-			add_action( 'admin_init', array( __CLASS__, 'check' ) );
-
 			if ( ! isset( self::$instance ) && self::$init ) {
 
 				self::$instance = new self;
@@ -70,46 +67,6 @@
 			}
 
 			return self::$instance;
-		}
-
-		/**
-		 * Check to ensure Connections is active.
-		 * If not, deactivate the plugin.
-		 *
-		 * NOTE: This seems to have to be fired hooked into the
-		 * `admin_init` action hook otherwise the functions are
-		 * not yet available.
-		 *
-		 * @access private
-		 * @since 1.0
-		 * @return (bool)
-		 */
-		public static function check() {
-
-			if ( ! class_exists( 'connectionsLoad' ) ) {
-
-				add_action(
-					'admin_notices',
-					 create_function(
-						'',
-						'echo \'<div id="message" class="error"><p><strong>ERROR:</strong> Connections must be installed and active in order use Connections Toolbar; deactivating...</p></div>\';'
-						)
-				);
-
-				$plugin = plugin_basename( __FILE__ );
-				// if ( is_admin() ) $plugin_data = get_plugin_data( __FILE__, FALSE );
-
-				if( is_plugin_active( $plugin ) )
-					deactivate_plugins( $plugin );
-
-				self::$init = FALSE;
-
-				// wp_redirect( add_query_arg( array( 'deactivate' => 'true' ), admin_url( 'plugins.php' ) ) );
-				return FALSE;
-			}
-
-			return TRUE;
-
 		}
 
 		/**
@@ -143,7 +100,7 @@
 			add_action( 'wp_head', array( __CLASS__, 'css' ) );
 			add_action( 'admin_head', array( __CLASS__, 'css' ) );
 		}
-		
+
 		/**
 		 * Define the core constants.
 		 *
@@ -207,8 +164,10 @@
 			// Translations: Secondly, look in plugin's "languages" folder = default.
 			load_plugin_textdomain( $textdomain, FALSE, $languagesDirectory );
 		}
-		
+
 		public static function toolbar( $admin_bar ) {
+
+			$form = new cnFormObjects();
 
 			// Bail if the user is not an admin that can manage options.
 			if ( ! current_user_can( 'manage_options' ) ) return;
@@ -237,7 +196,7 @@
 				'id'    => 'cn-toolbar-manage',
 				'parent' => 'cn-toolbar',
 				'title' => __( 'Manage', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_manage' ) , admin_url() . 'admin.php' ),
+				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'all' ) ), 'filter' ),
 				'meta'  => array(
 					'title' => _x( 'Manage', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -247,7 +206,7 @@
 				'id'    => 'cn-toolbar-manage-filter-approved',
 				'parent' => 'cn-toolbar-manage',
 				'title' => __( 'Filter: Approved', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_manage' ) , admin_url() . 'admin.php' ),
+				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'approved' ) ), 'filter' ),
 				'meta'  => array(
 					'title' => _x( 'Show Only Approved Entries', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -257,7 +216,7 @@
 				'id'    => 'cn-toolbar-manage-filter-pending',
 				'parent' => 'cn-toolbar-manage',
 				'title' => __( 'Filter: Pending', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_manage' ) , admin_url() . 'admin.php' ),
+				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'pending' ) ), 'filter' ),
 				'meta'  => array(
 					'title' => _x( 'Show Entries Awaiting Moderation', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -332,7 +291,7 @@
 					'title' => _x( 'Show the "Anniversary" Template Type', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
 			));
-			
+
 			$admin_bar->add_node( array(
 				'id'    => 'cn-toolbar-templates-filter-birthday',
 				'parent' => 'cn-toolbar-templates',
@@ -720,8 +679,8 @@
 	 *
 	 * Connections loads at default priority 10, this add-on is dependent on Connections,
 	 * and other add-ons; load at priority 10.1 that we'll want to be able to hook into the toolbar,
-	 * we'll load with priority 10.1 so we know Connections and its other add-ons will be loaded 
+	 * we'll load with priority 10.1 so we know Connections and its other add-ons will be loaded
 	 * and ready first.
 	 */
-	add_action( 'plugins_loaded', 'Connections_Toolbar', 10.1 );
+	add_action( 'cn_loaded', 'Connections_Toolbar' );
 }
