@@ -32,6 +32,11 @@ This will only show up in the adminbar if the user logged in has the `manage_opt
 
 == Changelog ==
 
+= 1.0.1 05/05/2014 =
+* BUG: Fix the manage page moderation filter links.
+* TWEAK: Removed the action which would deactivate Toolbar if Connections was not activate.
+* TWEAK: The plugin now hooks into the cn_loaded action rather than plugins_loaded.
+
 = 1.0 09/01/2013 =
 * Initial release.
 
