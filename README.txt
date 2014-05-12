@@ -1,8 +1,8 @@
 === Connections Business Directory Toolbar ===
 Contributors: shazahm1@hotmail.com
 Donate link: connections-pro.com
-Tags: admin bar, adminbar, administration, connections
-Requires at least: 3.3
+Tags: addresses, address book, addressbook, bio, bios, biographies, business, businesses, business directory, business-directory, business directory plugin, directory plugin, directory widget, church, contact, contacts, connect, connections, directory, directories, hcalendar, hcard, ical, icalendar, image, images, list, lists, listings, member directory, members directory, members directories, microformat, microformats, page, pages, people, profile, profiles, post, posts, plugin, shortcode, staff, user, users, vcard, wordpress business directory, wordpress directory, wordpress directory plugin, wordpress business directory, admin bar, adminbar, administration, connections business directory
+Requires at least: 3.5
 Tested up to: 3.6
 Stable tag: 1.0.1
 License: GPLv2 or later
@@ -14,7 +14,13 @@ Adds useful admin links and resources for the Connections Business Directory plu
 
 This is an extension plugin for the [Connections Business Directory Plugin](http://wordpress.org/plugins/connections/). Quick click access without having to scroll to all of Connections admin pages from either the admin or the front end for easy management. You can even go to a specific settings tab of filter the entry list with a single click making you life easier.
 
-What not just include this with the plugin as an option? Two reasons, the admin bar has limited space and to limit the amount of core plugin options and code.
+Why not just include this with the plugin as an option? Two reasons, the admin bar has limited space and to limit the amount of core plugin options and code.
+
+Here are a couple other great extensions that enhance your expirence with the Connections Business Directory:
+
+* [Business Hours](http://wordpress.org/plugins/connections-business-directory-hours/)
+* [Income Levels](http://wordpress.org/plugins/connections-business-directory-income-levels/)
+* Education Levels -- Coming soon!
 
 == Installation ==
 
