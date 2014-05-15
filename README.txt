@@ -16,7 +16,7 @@ This is an extension plugin for the [Connections Business Directory Plugin](http
 
 Why not just include this with the plugin as an option? Two reasons, the admin bar has limited space and to limit the amount of core plugin options and code.
 
-Here are a couple other great extensions that enhance your expirence with the Connections Business Directory:
+Here are other great extensions that enhance your expirence with the Connections Business Directory:
 
 * [Business Hours](http://wordpress.org/plugins/connections-business-directory-hours/)
 * [Income Levels](http://wordpress.org/plugins/connections-business-directory-income-levels/)
