@@ -20,7 +20,7 @@ Here are a couple other great extensions that enhance your expirence with the Co
 
 * [Business Hours](http://wordpress.org/plugins/connections-business-directory-hours/)
 * [Income Levels](http://wordpress.org/plugins/connections-business-directory-income-levels/)
-* Education Levels -- Coming soon!
+* [Education Level](http://wordpress.org/plugins/connections-business-directory-education-levels/)
 
 == Installation ==
 
