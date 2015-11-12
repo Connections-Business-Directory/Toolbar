@@ -11,7 +11,7 @@
  * Text Domain: connections-toolbar
  * Domain Path: /languages/
  *
- * Copyright (c) 2012-2013 ZAHMit.design
+ * Copyright (c) 2012-2015 ZAHMit.design
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
