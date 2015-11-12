@@ -55,8 +55,9 @@
 		 * Insures that only one instance exists at any one time.
 		 *
 		 * @access public
-		 * @since 1.0
-		 * @return [mixed] (bool) | (object) CN_Toolbar
+		 * @since  1.0
+		 *
+		 * @return CN_Toolbar
 		 */
 		public static function getInstance() {
 
@@ -105,8 +106,7 @@
 		 * Define the core constants.
 		 *
 		 * @access private
-		 * @since 1.0
-		 * @return (void)
+		 * @since  1.0
 		*/
 		private static function defineConstants() {
 
@@ -139,7 +139,6 @@
 		 * @uses get_locale()
 		 * @uses load_textdomain()
 		 * @uses load_plugin_textdomain()
-		 * @return (void)
 		 */
 		public static function loadTextdomain() {
 
@@ -165,6 +164,9 @@
 			load_plugin_textdomain( $textdomain, FALSE, $languagesDirectory );
 		}
 
+		/**
+		 * @param WP_Admin_Bar $admin_bar
+		 */
 		public static function toolbar( $admin_bar ) {
 
 			$form = new cnFormObjects();
