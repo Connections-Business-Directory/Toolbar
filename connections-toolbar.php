@@ -175,7 +175,7 @@
 			$admin_bar->add_node( array(
 				'id'    => 'cn-toolbar',
 				'title' => __( 'Connections', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_dashboard' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_dashboard' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'class' => 'icon-connections',
 					'title' => _x( 'Connections Dashboard', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
@@ -186,7 +186,7 @@
 				'id'    => 'cn-toolbar-dashboard',
 				'parent' => 'cn-toolbar',
 				'title' => __( 'Dashboard', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_dashboard' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_dashboard' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Dashboard', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -196,7 +196,7 @@
 				'id'    => 'cn-toolbar-manage',
 				'parent' => 'cn-toolbar',
 				'title' => __( 'Manage', 'connections-toolbar' ),
-				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'all' ) ), 'filter' ),
+				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'all' ), self_admin_url( 'admin.php' ) ), 'filter' ),
 				'meta'  => array(
 					'title' => _x( 'Manage', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -206,7 +206,7 @@
 				'id'    => 'cn-toolbar-manage-filter-approved',
 				'parent' => 'cn-toolbar-manage',
 				'title' => __( 'Filter: Approved', 'connections-toolbar' ),
-				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'approved' ) ), 'filter' ),
+				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'approved' ), self_admin_url( 'admin.php' ) ), 'filter' ),
 				'meta'  => array(
 					'title' => _x( 'Show Only Approved Entries', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -216,7 +216,7 @@
 				'id'    => 'cn-toolbar-manage-filter-pending',
 				'parent' => 'cn-toolbar-manage',
 				'title' => __( 'Filter: Pending', 'connections-toolbar' ),
-				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'pending' ) ), 'filter' ),
+				'href'  => $form->tokenURL( add_query_arg( array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'pending' ), self_admin_url( 'admin.php' ) ), 'filter' ),
 				'meta'  => array(
 					'title' => _x( 'Show Entries Awaiting Moderation', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -226,7 +226,7 @@
 				'id'    => 'cn-toolbar-manage-add-entry',
 				'parent' => 'cn-toolbar-manage',
 				'title' => __( 'Add New Entry', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_add' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_add' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Add New Entry', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -236,7 +236,7 @@
 				'id'    => 'cn-toolbar-manage-categories',
 				'parent' => 'cn-toolbar-manage',
 				'title' => __( 'Categories', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_categories' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_categories' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Manage Categories', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -246,7 +246,7 @@
 				'id'    => 'cn-toolbar-templates',
 				'parent' => 'cn-toolbar',
 				'title' => __( 'Templates', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_templates' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_templates' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Manage Templates', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -256,7 +256,7 @@
 				'id'    => 'cn-toolbar-templates-filter-individual',
 				'parent' => 'cn-toolbar-templates',
 				'title' => __( 'Filter: Individual', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'individual' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'individual' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Show the "Individual" Template Type', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -266,7 +266,7 @@
 				'id'    => 'cn-toolbar-templates-filter-organization',
 				'parent' => 'cn-toolbar-templates',
 				'title' => __( 'Filter: Organization', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'organization' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'organization' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Show the "Organization" Template Type', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -276,7 +276,7 @@
 				'id'    => 'cn-toolbar-templates-filter-family',
 				'parent' => 'cn-toolbar-templates',
 				'title' => __( 'Filter: Family', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'family' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'family' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Show the "Family" Template Type', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -286,7 +286,7 @@
 				'id'    => 'cn-toolbar-templates-filter-anniversary',
 				'parent' => 'cn-toolbar-templates',
 				'title' => __( 'Filter: Anniversary', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'anniversary' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'anniversary' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Show the "Anniversary" Template Type', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -296,7 +296,7 @@
 				'id'    => 'cn-toolbar-templates-filter-birthday',
 				'parent' => 'cn-toolbar-templates',
 				'title' => __( 'Filter: Birthday', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'birthday' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_templates', 'type' => 'birthday' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Show the "Birthday" Template Type', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -323,7 +323,7 @@
 				'id'    => 'cn-toolbar-settings',
 				'parent' => 'cn-toolbar',
 				'title' => __( 'Settings', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -333,7 +333,7 @@
 				'id'    => 'cn-toolbar-settings-general',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'General', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'General Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -343,7 +343,7 @@
 				'id'    => 'cn-toolbar-settings-display',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'Display', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'display' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'display' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Display Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -353,7 +353,7 @@
 				'id'    => 'cn-toolbar-settings-images',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'Images', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'images' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'images' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Images Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -363,7 +363,7 @@
 				'id'    => 'cn-toolbar-settings-search',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'Search', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'search' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'search' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Search Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -373,7 +373,7 @@
 				'id'    => 'cn-toolbar-settings-seo',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'SEO', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'seo' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'seo' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'SEO Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -383,7 +383,7 @@
 				'id'    => 'cn-toolbar-settings-roles',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'Roles', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_roles' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_roles' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Roles and Capabilities', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
@@ -393,7 +393,7 @@
 				'id'    => 'cn-toolbar-settings-advanced',
 				'parent' => 'cn-toolbar-settings',
 				'title' => __( 'Advanced', 'connections-toolbar' ),
-				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'advanced' ) , admin_url() . 'admin.php' ),
+				'href'  => add_query_arg( array( 'page' => 'connections_settings', 'tab' => 'advanced' ), self_admin_url( 'admin.php' ) ),
 				'meta'  => array(
 					'title' => _x( 'Advanced Settings', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 				),
