@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Connections Toolbar
+ * Plugin Name: Connections Business Directory Toolbar
  * Plugin URI: http://connections-pro.com/
  * Description: This plugin adds useful admin links and resources for the Connections Business Directory plugin to the WordPress Admin Bar.
  * Version: 1.0.1
