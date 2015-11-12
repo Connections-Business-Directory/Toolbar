@@ -2,9 +2,9 @@
 Contributors: shazahm1@hotmail.com
 Donate link: connections-pro.com
 Tags: addresses, address book, addressbook, bio, bios, biographies, business, businesses, business directory, business-directory, business directory plugin, directory plugin, directory widget, church, contact, contacts, connect, connections, directory, directories, hcalendar, hcard, ical, icalendar, image, images, list, lists, listings, member directory, members directory, members directories, microformat, microformats, page, pages, people, profile, profiles, post, posts, plugin, shortcode, staff, user, users, vcard, wordpress business directory, wordpress directory, wordpress directory plugin, wordpress business directory, admin bar, adminbar, administration, connections business directory
-Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.0.1
+Requires at least: 4.1
+Tested up to: 4.4
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,11 +16,35 @@ This is an extension plugin for the [Connections Business Directory Plugin](http
 
 Why not just include this with the plugin as an option? Two reasons, the admin bar has limited space and to limit the amount of core plugin options and code.
 
-Here are other great extensions that enhance your expirence with the Connections Business Directory:
+Here are some other great **free extensions** (with more on the way) that enhance your experience with the business directory:
 
-* [Business Hours](http://wordpress.org/plugins/connections-business-directory-hours/)
-* [Income Levels](http://wordpress.org/plugins/connections-business-directory-income-levels/)
-* [Education Level](http://wordpress.org/plugins/connections-business-directory-education-levels/)
+**Utility**
+
+* [Toolbar](http://wordpress.org/plugins/connections-toolbar/) :: Provide quick links to the admin pages from the admin bar.
+* [Login](http://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple to use login shortcode and widget.
+
+**Custom Fields**
+
+* [Business Hours](http://wordpress.org/plugins/connections-business-directory-hours/) :: Add the business open hours.
+* [Income Level](http://wordpress.org/plugins/connections-business-directory-income-levels/) :: Add an income level.
+* [Education Level](http://wordpress.org/plugins/connections-business-directory-education-levels/) :: Add an education level.
+* [Languages](http://wordpress.org/plugins/connections-business-directory-languages/) :: Add languages spoken.
+
+**Misc**
+
+* [Face Detect](https://wordpress.org/plugins/connections-business-directory-face-detect/) :: Applies face detection before cropping an image.
+
+**Premium Extensions**
+
+* [Authored](http://connections-pro.com/add-on/authored/) :: Displays a list of blog posts written by the entry on their profile page.
+* [Contact](http://connections-pro.com/add-on/contact/) :: Displays a contact form on the entry's profile page to allow your visitors to contact the entry without revealing their email address.
+* [CSV Import](http://connections-pro.com/add-on/csv-import/) :: Bulk import your data in to your directory.
+* [Custom Category Order](http://connections-pro.com/add-on/custom-category-order/) :: Order your categories exactly as you need them.
+* [Form](http://connections-pro.com/add-on/form/) :: Allow site visitor to submit entries to your directory. Also provides frontend editing support.
+* [Link](http://connections-pro.com/add-on/link/) :: Links a WordPress user to an entry so that user can maintain their entry with or without moderation.
+* [ROT13 Encryption](http://connections-pro.com/add-on/rot13-email-encryption/) :: Protect email addresses from being harvested from your business directory by spam bots.
+* [SiteShot](http://connections-pro.com/add-on/siteshot/) :: Show a screen capture of the entry's website.
+* [Widget Pack](http://connections-pro.com/add-on/widget-pack/) :: A set of feature rich, versatile and highly configurable widgets that can be used to enhance your directory.
 
 == Installation ==
 
@@ -30,13 +54,21 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 = Why doesn't it show up for me? =
 
-This will only show up in the adminbar if the user logged in has the `manage_options` capability.
+This will only show up in the admin bar if the user logged in has the `manage_options` capability.
 
 == Screenshots ==
 
 [Screenshots can be found here.](http://connections-pro.com/add-on/toolbar/)
 
 == Changelog ==
+
+= 1.1 11/12/2015 =
+* BUG: Fix admin URLs.
+* OTHER: Minor phpDoc fixes.
+* OTHER: Update copyright date.
+* OTHER: Readme file updates.
+* DEV: Update the .git* files.
+* DEV: Code beautification.
 
 = 1.0.1 05/05/2014 =
 * BUG: Fix the manage page moderation filter links.
