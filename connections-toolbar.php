@@ -1,30 +1,25 @@
 <?php
 /**
- * Plugin Name: Connections Business Directory Toolbar
- * Plugin URI: https://connections-pro.com/
- * Description: This plugin adds useful admin links and resources for the Connections Business Directory plugin to the WordPress Admin Bar.
- * Version: 1.1
- * Author: Steven A. Zahm
- * Author URI: https://connections-pro.com/
- * License: GPL-2.0+
- * License URI: https://www.opensource.org/licenses/gpl-license.php
- * Text Domain: connections-toolbar
- * Domain Path: /languages/
+ * An extension for the Connections Business Directory plugin that adds useful links and resources to the WordPress Admin Bar.
  *
- * Copyright (c) 2012-2015 ZAHMit.design
+ * @package   Connections Business Directory Extension - Toolbar
+ * @category  Extension
+ * @author    Steven A. Zahm
+ * @license   GPL-2.0+
+ * @link      https://connections-pro.com
+ * @copyright 2021 Steven A. Zahm
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ * @wordpress-plugin
+ * Plugin Name:       Connections Business Directory Extension - Toolbar
+ * Plugin URI:        https://connections-pro.com/add-on/toolbar/
+ * Description:       An extension for the Connections Business Directory plugin that adds useful links and resources to the WordPress Admin Bar.
+ * Version:           1.0.2
+ * Author:            Steven A. Zahm
+ * Author URI:        https://connections-pro.com
+ * License:           GPL-2.0+
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       connections-toolbar
+ * Domain Path:       /languages
  */
 
 if ( ! class_exists( 'CN_Toolbar' ) ) {
