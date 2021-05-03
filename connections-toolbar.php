@@ -947,7 +947,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	 *
 	 * @access public
 	 * @since  1.0
-	 * @return mixed object|bool
+	 * @return CN_Toolbar
 	 */
 	function Connections_Toolbar() {
 
