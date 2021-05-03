@@ -898,7 +898,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			}
 
 			?>
-<style type="text/css">
+<style>
 	#wpadminbar.nojs .ab-top-menu > li.menupop.icon-connections:hover > .ab-item,
 	#wpadminbar .ab-top-menu > li.menupop.icon-connections.hover > .ab-item,
 	#wpadminbar.nojs .ab-top-menu > li.menupop.icon-connections > .ab-item,
