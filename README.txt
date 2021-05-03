@@ -1,10 +1,11 @@
 === Connections Business Directory Toolbar ===
 Contributors: shazahm1@hotmail.com
-Donate link: connections-pro.com
+Donate link: https://connections-pro.com/
 Tags: addresses, address book, addressbook, bio, bios, biographies, business, businesses, business directory, business-directory, business directory plugin, directory plugin, directory widget, church, contact, contacts, connect, connections, directory, directories, hcalendar, hcard, ical, icalendar, image, images, list, lists, listings, member directory, members directory, members directories, microformat, microformats, page, pages, people, profile, profiles, post, posts, plugin, shortcode, staff, user, users, vcard, wordpress business directory, wordpress directory, wordpress directory plugin, wordpress business directory, admin bar, adminbar, administration, connections business directory
-Requires at least: 4.1
-Tested up to: 4.4
-Stable tag: 1.1
+Requires at least: 5.1
+Tested up to: 5.7
+Requires PHP: 5.6.20
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +61,20 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 [Screenshots can be found here.](http://connections-pro.com/add-on/toolbar/)
 
+== Credits ==
+
+This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-toolbar/) plugin byï¿½[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+
 == Changelog ==
+
+= 1.1.1 05/03/2021 =
+* OTHER: Update support links.
+* OTHER: Change `http` to `https` in links.
+* OTHER: Removed use of unused declared variable.
+* OTHER: Remove used of deprecated tag attribute.
+* DEV: phpDoc correction.
+* DEV: Update plugin header.
+* DEV: Update the README.txt header.
 
 = 1.1 11/12/2015 =
 * BUG: Fix admin URLs.
@@ -80,9 +94,5 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 == Upgrade Notice ==
 
-= 1.0 =
-Initial release.
-
-== Credits ==
-
-This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-toolbar/) plugin by [daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+= 1.1.1 =
+It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
