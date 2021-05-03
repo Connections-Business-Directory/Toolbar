@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Connections Business Directory Toolbar
- * Plugin URI: http://connections-pro.com/
+ * Plugin URI: https://connections-pro.com/
  * Description: This plugin adds useful admin links and resources for the Connections Business Directory plugin to the WordPress Admin Bar.
  * Version: 1.1
  * Author: Steven A. Zahm
- * Author URI: http://connections-pro.com/
+ * Author URI: https://connections-pro.com/
  * License: GPL-2.0+
- * License URI: http://www.opensource.org/licenses/gpl-license.php
+ * License URI: https://www.opensource.org/licenses/gpl-license.php
  * Text Domain: connections-toolbar
  * Domain Path: /languages/
  *
@@ -434,7 +434,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-purchase-templates',
 					'parent' => 'cn-toolbar-templates-secondary-group',
 					'title'  => __( 'Get More', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/templates/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/templates/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Purchase Premium Templates',
@@ -604,7 +604,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-add-ons',
 					'parent' => 'cn-toolbar-add-ons-group',
 					'title'  => __( 'Extensions &amp; Templates', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Extensions &amp; Extensions',
@@ -621,7 +621,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-add-on-extensions',
 					'parent' => 'cn-toolbar-add-ons',
 					'title'  => __( 'Extensions', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/extensions/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/extensions/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Purchase Extensions',
@@ -638,7 +638,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-add-on-templates',
 					'parent' => 'cn-toolbar-add-ons',
 					'title'  => __( 'Templates', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/templates/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/templates/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Purchase Premium Templates',
@@ -803,7 +803,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-documentation-faqs',
 					'parent' => 'cn-toolbar-support-documentation',
 					'title'  => __( 'FAQs', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/faq/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/faq/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Frequently Asked Questions',
@@ -820,7 +820,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-documentation-quicktips',
 					'parent' => 'cn-toolbar-support-documentation',
 					'title'  => __( 'QuickTips', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/quicktips/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/quicktips/' ),
 					'meta'   => array(
 						'title'  => _x( 'QuickTips', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 						'target' => '_blank',
@@ -833,7 +833,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-documentation-shortcodes',
 					'parent' => 'cn-toolbar-support-documentation',
 					'title'  => __( 'Shortcodes', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/documentation/connections/shortcodes/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/documentation/shortcodes/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Shortcodes',
@@ -850,7 +850,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-documentation-translation',
 					'parent' => 'cn-toolbar-support-documentation',
 					'title'  => __( 'Translation', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/documentation/connections/translation/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/documentation/translation/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Translation',
@@ -869,7 +869,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				'id'    => 'cn-toolbar-support-documentation-search',
 				'parent' => 'cn-toolbar-support-group',
 				'title' => '
-					<form method="get" action="http://connections-pro.com/" class=" " target="_blank">
+					<form method="get" action="https://connections-pro.com/" class=" " target="_blank">
 					<input type="text" placeholder="' . $strSearch . '" onblur="this.value=(this.value==\'\') ? \'' . $strSearch . '\' : this.value;" onfocus="this.value=(this.value==\'' . $strSearch . '\') ? \'\' : this.value;" value="' . $strSearch . '" name="s" value="" class="text cn-toolbar-search-input" />
 					<input type="hidden" name="post_type[]" value="documentation" />
 					<input type="hidden" name="post_type[]" value="faqs" />
