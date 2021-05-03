@@ -666,7 +666,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forums',
 					'parent' => 'cn-toolbar-support-group',
 					'title'  => __( 'Support Forums', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Support Forums',
@@ -683,7 +683,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-feature-requests',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'Feature Requests', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/feature-requests/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Feature Requests',
@@ -700,7 +700,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-pre-sales',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'Pre Sales Questions', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/presale-questions/' ),
+					'href'   => esc_url_raw( 'https://connections-pro.com/contact/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Pre Sales Questions',
@@ -717,7 +717,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-general',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'General', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/general-support/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x( 'General', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 						'target' => '_blank',
@@ -730,7 +730,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-extension',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'Extensions', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/extension/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Extensions',
@@ -747,7 +747,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-template',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'Templates', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/template/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x( 'Templates', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
 						'target' => '_blank',
@@ -760,7 +760,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-plugin-conflicts',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'Plugin Conflicts', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/plugin-conflicts/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Plugin Conflicts',
@@ -777,7 +777,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-support-forum-theme-conflicts',
 					'parent' => 'cn-toolbar-support-forums',
 					'title'  => __( 'Theme Conflicts', 'connections-toolbar' ),
-					'href'   => esc_url_raw( 'http://connections-pro.com/support/forum/theme-conflicts/' ),
+					'href'   => esc_url_raw( 'https://wordpress.org/support/plugin/connections/' ),
 					'meta'   => array(
 						'title'  => _x(
 							'Theme Conflicts',
