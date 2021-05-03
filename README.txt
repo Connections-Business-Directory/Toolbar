@@ -61,7 +61,20 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 [Screenshots can be found here.](http://connections-pro.com/add-on/toolbar/)
 
+== Credits ==
+
+This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+
 == Changelog ==
+
+= 1.1.1 05/03/2021 =
+* OTHER: Update support links.
+* OTHER: Change `http` to `https` in links.
+* OTHER: Removed use of unused declared variable.
+* OTHER: Remove used of deprecated tag attribute.
+* DEV: phpDoc correction.
+* DEV: Update plugin header.
+* DEV: Update the README.txt header.
 
 = 1.1 11/12/2015 =
 * BUG: Fix admin URLs.
@@ -81,9 +94,5 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 == Upgrade Notice ==
 
-= 1.0 =
-Initial release.
-
-== Credits ==
-
-This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+= 1.1.1 =
+It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
