@@ -862,7 +862,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				)
 			);
 
-			$strSearch = __( 'Search', 'connections-toolbar' );
+			//$strSearch = __( 'Search', 'connections-toolbar' );
 
 			/* Disable this for now as it causes PHP errors on the site. reason is unknown at the moment. */
 			/*$admin_bar->add_node( array(
