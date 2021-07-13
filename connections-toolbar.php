@@ -13,7 +13,7 @@
  * Plugin Name:       Connections Business Directory Extension - Toolbar
  * Plugin URI:        https://connections-pro.com/add-on/toolbar/
  * Description:       An extension for the Connections Business Directory plugin that adds useful links and resources to the WordPress Admin Bar.
- * Version:           1.1.1
+ * Version:           1.2
  * Author:            Steven A. Zahm
  * Author URI:        https://connections-pro.com
  * License:           GPL-2.0+
@@ -108,7 +108,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			/*
 			 * Version Constants
 			 */
-			define( 'CNTB_CURRENT_VERSION', '1.1.1' );
+			define( 'CNTB_CURRENT_VERSION', '1.2' );
 
 			/*
 			 * Core Constants
@@ -283,24 +283,25 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				)
 			);
 
-			$admin_bar->add_node(
-				array(
-					'id'     => 'cn-toolbar-manage-categories',
-					'parent' => 'cn-toolbar-manage',
-					'title'  => __( 'Categories', 'connections-toolbar' ),
-					'href'   => add_query_arg(
-						array( 'page' => 'connections_categories' ),
-						self_admin_url( 'admin.php' )
-					),
-					'meta'   => array(
-						'title' => _x(
-							'Manage Categories',
-							'This is a tooltip shown on mouse hover.',
-							'connections-toolbar'
+			$taxonomies = \Connections_Directory\Taxonomy\Registry::get()->getTaxonomies();
+
+			foreach ( $taxonomies as $taxonomy ) {
+
+				$admin_bar->add_node(
+					array(
+						'id'     => "cn-toolbar-manage-{$taxonomy->getSlug()}",
+						'parent' => 'cn-toolbar-manage',
+						'title'  => $taxonomy->getLabels()->menu_name,
+						'href'   => add_query_arg(
+							array( 'page' => "connections_manage_{$taxonomy->getSlug()}_terms" ),
+							self_admin_url( 'admin.php' )
 						),
-					),
-				)
-			);
+						'meta'   => array(
+							'title' => $taxonomy->getLabels()->menu_name,
+						),
+					)
+				);
+            }
 
 			$admin_bar->add_node(
 				array(

@@ -3,9 +3,9 @@ Contributors: shazahm1@hotmail.com
 Donate link: https://connections-pro.com/
 Tags: addresses, address book, addressbook, bio, bios, biographies, business, businesses, business directory, business-directory, business directory plugin, directory plugin, directory widget, church, contact, contacts, connect, connections, directory, directories, hcalendar, hcard, ical, icalendar, image, images, list, lists, listings, member directory, members directory, members directories, microformat, microformats, page, pages, people, profile, profiles, post, posts, plugin, shortcode, staff, user, users, vcard, wordpress business directory, wordpress directory, wordpress directory plugin, wordpress business directory, admin bar, adminbar, administration, connections business directory
 Requires at least: 5.1
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.6.20
-Stable tag: 1.1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,10 @@ This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-to
 
 == Changelog ==
 
+= 1.2 07/13/2021 =
+* TWEAK: Support the new Taxonomy API. Custom Taxonomies will now display in the Manage menu branch.
+* BUG: Fix the link to the Categories admin page, utilizing the Taxonomy API vs a hard coded link.
+
 = 1.1.1 05/03/2021 =
 * OTHER: Update support links.
 * OTHER: Change `http` to `https` in links.
@@ -95,4 +99,7 @@ This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-to
 == Upgrade Notice ==
 
 = 1.1.1 =
+It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+
+= 1.2 =
 It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
