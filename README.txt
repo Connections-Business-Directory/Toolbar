@@ -67,6 +67,10 @@ This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-to
 
 == Changelog ==
 
+= 1.2 07/13/2021 =
+* TWEAK: Support the new Taxonomy API. Custom Taxonomies will now display in the Manage menu branch.
+* BUG: Fix the link to the Categories admin page, utilizing the Taxonomy API vs a hard coded link.
+
 = 1.1.1 05/03/2021 =
 * OTHER: Update support links.
 * OTHER: Change `http` to `https` in links.
@@ -95,4 +99,7 @@ This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-to
 == Upgrade Notice ==
 
 = 1.1.1 =
+It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+
+= 1.2 =
 It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
