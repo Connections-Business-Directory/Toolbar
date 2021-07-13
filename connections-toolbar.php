@@ -283,24 +283,25 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				)
 			);
 
-			$admin_bar->add_node(
-				array(
-					'id'     => 'cn-toolbar-manage-categories',
-					'parent' => 'cn-toolbar-manage',
-					'title'  => __( 'Categories', 'connections-toolbar' ),
-					'href'   => add_query_arg(
-						array( 'page' => 'connections_categories' ),
-						self_admin_url( 'admin.php' )
-					),
-					'meta'   => array(
-						'title' => _x(
-							'Manage Categories',
-							'This is a tooltip shown on mouse hover.',
-							'connections-toolbar'
+			$taxonomies = \Connections_Directory\Taxonomy\Registry::get()->getTaxonomies();
+
+			foreach ( $taxonomies as $taxonomy ) {
+
+				$admin_bar->add_node(
+					array(
+						'id'     => "cn-toolbar-manage-{$taxonomy->getSlug()}",
+						'parent' => 'cn-toolbar-manage',
+						'title'  => $taxonomy->getLabels()->menu_name,
+						'href'   => add_query_arg(
+							array( 'page' => "connections_manage_{$taxonomy->getSlug()}_terms" ),
+							self_admin_url( 'admin.php' )
 						),
-					),
-				)
-			);
+						'meta'   => array(
+							'title' => $taxonomy->getLabels()->menu_name,
+						),
+					)
+				);
+            }
 
 			$admin_bar->add_node(
 				array(
