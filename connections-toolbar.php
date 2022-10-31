@@ -22,6 +22,7 @@
  * Domain Path:       /languages
  */
 
+use Connections_Directory\Taxonomy\Registry;
 use Connections_Directory\Utility\_nonce;
 
 if ( ! class_exists( 'CN_Toolbar' ) ) {
@@ -301,7 +302,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				)
 			);
 
-			$taxonomies = \Connections_Directory\Taxonomy\Registry::get()->getTaxonomies();
+			$taxonomies = Registry::get()->getTaxonomies();
 
 			foreach ( $taxonomies as $taxonomy ) {
 
