@@ -22,7 +22,7 @@ Here are some other great **free extensions** (with more on the way) that enhanc
 **Utility**
 
 * [Toolbar](http://wordpress.org/plugins/connections-toolbar/) :: Provide quick links to the admin pages from the admin bar.
-* [Login](http://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple to use login shortcode and widget.
+* [Login](http://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple-to-use login shortcode and widget.
 
 **Custom Fields**
 
@@ -63,7 +63,7 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 == Credits ==
 
-This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+This plugin was inspired by the [EDD Toolbar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
 
 == Changelog ==
 
@@ -99,7 +99,7 @@ This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-to
 == Upgrade Notice ==
 
 = 1.1.1 =
-It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
 
 = 1.2 =
-It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
