@@ -22,6 +22,8 @@
  * Domain Path:       /languages
  */
 
+use Connections_Directory\Utility\_nonce;
+
 if ( ! class_exists( 'CN_Toolbar' ) ) {
 
 	class CN_Toolbar {
@@ -164,8 +166,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 */
 		public static function toolbar( $admin_bar ) {
 
-			$form = new cnFormObjects();
-
 			// Bail if the user is not an admin that can manage options.
 			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
@@ -210,12 +210,18 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-manage',
 					'parent' => 'cn-toolbar',
 					'title'  => __( 'Manage', 'connections-toolbar' ),
-					'href'   => $form->tokenURL(
-						add_query_arg(
-							array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'all' ),
-							self_admin_url( 'admin.php' )
-						),
-						'filter'
+					'href'   => esc_url(
+						_nonce::url(
+							add_query_arg(
+								array(
+									'page'      => 'connections_manage',
+									'cn-action' => 'filter',
+									'status'    => 'all',
+								),
+								self_admin_url( 'admin.php' )
+							),
+							'filter'
+						)
 					),
 					'meta'   => array(
 						'title' => _x( 'Manage', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
@@ -228,12 +234,18 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-manage-filter-approved',
 					'parent' => 'cn-toolbar-manage',
 					'title'  => __( 'Filter: Approved', 'connections-toolbar' ),
-					'href'   => $form->tokenURL(
-						add_query_arg(
-							array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'approved' ),
-							self_admin_url( 'admin.php' )
-						),
-						'filter'
+					'href'   => esc_url(
+						_nonce::url(
+							add_query_arg(
+								array(
+									'page'      => 'connections_manage',
+									'cn-action' => 'filter',
+									'status'    => 'approved',
+								),
+								self_admin_url( 'admin.php' )
+							),
+							'filter'
+						)
 					),
 					'meta'   => array(
 						'title' => _x(
@@ -250,12 +262,18 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-manage-filter-pending',
 					'parent' => 'cn-toolbar-manage',
 					'title'  => __( 'Filter: Pending', 'connections-toolbar' ),
-					'href'   => $form->tokenURL(
-						add_query_arg(
-							array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'pending' ),
-							self_admin_url( 'admin.php' )
-						),
-						'filter'
+					'href'   => esc_url(
+						_nonce::url(
+							add_query_arg(
+								array(
+									'page'      => 'connections_manage',
+									'cn-action' => 'filter',
+									'status'    => 'pending',
+								),
+								self_admin_url( 'admin.php' )
+							),
+							'filter'
+						)
 					),
 					'meta'   => array(
 						'title' => _x(
