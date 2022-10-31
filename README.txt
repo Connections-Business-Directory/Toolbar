@@ -2,10 +2,10 @@
 Contributors: shazahm1@hotmail.com
 Donate link: https://connections-pro.com/
 Tags: addresses, address book, addressbook, bio, bios, biographies, business, businesses, business directory, business-directory, business directory plugin, directory plugin, directory widget, church, contact, contacts, connect, connections, directory, directories, hcalendar, hcard, ical, icalendar, image, images, list, lists, listings, member directory, members directory, members directories, microformat, microformats, page, pages, people, profile, profiles, post, posts, plugin, shortcode, staff, user, users, vcard, wordpress business directory, wordpress directory, wordpress directory plugin, wordpress business directory, admin bar, adminbar, administration, connections business directory
-Requires at least: 5.1
-Tested up to: 5.8
+Requires at least: 5.6
+Tested up to: 6.1
 Requires PHP: 5.6.20
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ Here are some other great **free extensions** (with more on the way) that enhanc
 **Utility**
 
 * [Toolbar](http://wordpress.org/plugins/connections-toolbar/) :: Provide quick links to the admin pages from the admin bar.
-* [Login](http://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple to use login shortcode and widget.
+* [Login](http://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple-to-use login shortcode and widget.
 
 **Custom Fields**
 
@@ -63,9 +63,15 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 == Credits ==
 
-This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+This plugin was inspired by the [EDD Toolbar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
 
 == Changelog ==
+
+= 1.3 10/31/2022 =
+* TWEAK: Remove use of deprecated `cnFormObjects::tokenURL()` method replaced with `_nonce::url()`.
+* TWEAK: Qualifier can be replaced with an import.
+* OTHER: Update README.txt header.
+* OTHER: Correct misspellings.
 
 = 1.2 07/13/2021 =
 * TWEAK: Support the new Taxonomy API. Custom Taxonomies will now display in the Manage menu branch.
@@ -99,7 +105,10 @@ This plugin was inspired by the [EDD Toobar](http://wordpress.org/plugins/edd-to
 == Upgrade Notice ==
 
 = 1.1.1 =
-It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
 
 = 1.2 =
-It is recommended to backup before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+
+= 1.3 =
+It is recommended to back up before updating. Requires WordPress >= 5.6 and PHP >= 5.6.20 PHP version >= 7.4 recommended.

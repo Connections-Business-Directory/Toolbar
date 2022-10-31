@@ -13,7 +13,7 @@
  * Plugin Name:       Connections Business Directory Extension - Toolbar
  * Plugin URI:        https://connections-pro.com/add-on/toolbar/
  * Description:       An extension for the Connections Business Directory plugin that adds useful links and resources to the WordPress Admin Bar.
- * Version:           1.2
+ * Version:           1.3
  * Author:            Steven A. Zahm
  * Author URI:        https://connections-pro.com
  * License:           GPL-2.0+
@@ -21,6 +21,9 @@
  * Text Domain:       connections-toolbar
  * Domain Path:       /languages
  */
+
+use Connections_Directory\Taxonomy\Registry;
+use Connections_Directory\Utility\_nonce;
 
 if ( ! class_exists( 'CN_Toolbar' ) ) {
 
@@ -108,7 +111,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			/*
 			 * Version Constants
 			 */
-			define( 'CNTB_CURRENT_VERSION', '1.2' );
+			define( 'CNTB_CURRENT_VERSION', '1.3' );
 
 			/*
 			 * Core Constants
@@ -164,8 +167,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 */
 		public static function toolbar( $admin_bar ) {
 
-			$form = new cnFormObjects();
-
 			// Bail if the user is not an admin that can manage options.
 			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
@@ -210,12 +211,18 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-manage',
 					'parent' => 'cn-toolbar',
 					'title'  => __( 'Manage', 'connections-toolbar' ),
-					'href'   => $form->tokenURL(
-						add_query_arg(
-							array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'all' ),
-							self_admin_url( 'admin.php' )
-						),
-						'filter'
+					'href'   => esc_url(
+						_nonce::url(
+							add_query_arg(
+								array(
+									'page'      => 'connections_manage',
+									'cn-action' => 'filter',
+									'status'    => 'all',
+								),
+								self_admin_url( 'admin.php' )
+							),
+							'filter'
+						)
 					),
 					'meta'   => array(
 						'title' => _x( 'Manage', 'This is a tooltip shown on mouse hover.', 'connections-toolbar' ),
@@ -228,12 +235,18 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-manage-filter-approved',
 					'parent' => 'cn-toolbar-manage',
 					'title'  => __( 'Filter: Approved', 'connections-toolbar' ),
-					'href'   => $form->tokenURL(
-						add_query_arg(
-							array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'approved' ),
-							self_admin_url( 'admin.php' )
-						),
-						'filter'
+					'href'   => esc_url(
+						_nonce::url(
+							add_query_arg(
+								array(
+									'page'      => 'connections_manage',
+									'cn-action' => 'filter',
+									'status'    => 'approved',
+								),
+								self_admin_url( 'admin.php' )
+							),
+							'filter'
+						)
 					),
 					'meta'   => array(
 						'title' => _x(
@@ -250,12 +263,18 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'id'     => 'cn-toolbar-manage-filter-pending',
 					'parent' => 'cn-toolbar-manage',
 					'title'  => __( 'Filter: Pending', 'connections-toolbar' ),
-					'href'   => $form->tokenURL(
-						add_query_arg(
-							array( 'page' => 'connections_manage', 'cn-action' => 'filter', 'status' => 'pending' ),
-							self_admin_url( 'admin.php' )
-						),
-						'filter'
+					'href'   => esc_url(
+						_nonce::url(
+							add_query_arg(
+								array(
+									'page'      => 'connections_manage',
+									'cn-action' => 'filter',
+									'status'    => 'pending',
+								),
+								self_admin_url( 'admin.php' )
+							),
+							'filter'
+						)
 					),
 					'meta'   => array(
 						'title' => _x(
@@ -283,7 +302,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				)
 			);
 
-			$taxonomies = \Connections_Directory\Taxonomy\Registry::get()->getTaxonomies();
+			$taxonomies = Registry::get()->getTaxonomies();
 
 			foreach ( $taxonomies as $taxonomy ) {
 
@@ -879,7 +898,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 
 			/*
 			 * Rather than create a bunch of hooks or filters
-			 * to allow adding/removing nodes; provide a action
+			 * to allow adding/removing nodes; provide an action
 			 * passing $menu_bar that way one knows the core
 			 * toolbar nodes have been added.
 			 */
@@ -955,7 +974,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	 *
 	 * Connections loads at default priority 10, this add-on is dependent on Connections,
 	 * and other add-ons; load at priority 10.1 that we'll want to be able to hook into the toolbar,
-	 * we'll load with priority 10.1 so we know Connections and its other add-ons will be loaded
+	 * we'll load with priority 10.1, so we know Connections and its other add-ons will be loaded
 	 * and ready first.
 	 */
 	add_action( 'cn_loaded', 'Connections_Toolbar' );
