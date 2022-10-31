@@ -67,6 +67,12 @@ This plugin was inspired by the [EDD Toolbar](http://wordpress.org/plugins/edd-t
 
 == Changelog ==
 
+= 1.3 10/31/2022 =
+* TWEAK: Remove use of deprecated `cnFormObjects::tokenURL()` method replaced with `_nonce::url()`.
+* TWEAK: Qualifier can be replaced with an import.
+* OTHER: Update README.txt header.
+* OTHER: Correct misspellings.
+
 = 1.2 07/13/2021 =
 * TWEAK: Support the new Taxonomy API. Custom Taxonomies will now display in the Manage menu branch.
 * BUG: Fix the link to the Categories admin page, utilizing the Taxonomy API vs a hard coded link.
@@ -103,3 +109,6 @@ It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP 
 
 = 1.2 =
 It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP >= 5.6.20 PHP version >= 7.2 recommended.
+
+= 1.3 =
+It is recommended to back up before updating. Requires WordPress >= 5.6 and PHP >= 5.6.20 PHP version >= 7.4 recommended.
