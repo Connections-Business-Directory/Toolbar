@@ -897,7 +897,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 
 			/*
 			 * Rather than create a bunch of hooks or filters
-			 * to allow adding/removing nodes; provide a action
+			 * to allow adding/removing nodes; provide an action
 			 * passing $menu_bar that way one knows the core
 			 * toolbar nodes have been added.
 			 */
@@ -973,7 +973,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	 *
 	 * Connections loads at default priority 10, this add-on is dependent on Connections,
 	 * and other add-ons; load at priority 10.1 that we'll want to be able to hook into the toolbar,
-	 * we'll load with priority 10.1 so we know Connections and its other add-ons will be loaded
+	 * we'll load with priority 10.1, so we know Connections and its other add-ons will be loaded
 	 * and ready first.
 	 */
 	add_action( 'cn_loaded', 'Connections_Toolbar' );
