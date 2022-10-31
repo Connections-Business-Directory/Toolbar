@@ -13,7 +13,7 @@
  * Plugin Name:       Connections Business Directory Extension - Toolbar
  * Plugin URI:        https://connections-pro.com/add-on/toolbar/
  * Description:       An extension for the Connections Business Directory plugin that adds useful links and resources to the WordPress Admin Bar.
- * Version:           1.2
+ * Version:           1.3
  * Author:            Steven A. Zahm
  * Author URI:        https://connections-pro.com
  * License:           GPL-2.0+
@@ -111,7 +111,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			/*
 			 * Version Constants
 			 */
-			define( 'CNTB_CURRENT_VERSION', '1.2' );
+			define( 'CNTB_CURRENT_VERSION', '1.3' );
 
 			/*
 			 * Core Constants
