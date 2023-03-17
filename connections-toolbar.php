@@ -86,7 +86,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 *
 		 * @return CN_Toolbar
 		 */
-		public static function getInstance() {
+		public static function getInstance(): CN_Toolbar {
 
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
 
@@ -139,7 +139,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		/**
 		 * @param WP_Admin_Bar $admin_bar
 		 */
-		public static function toolbar( $admin_bar ) {
+		public static function toolbar( WP_Admin_Bar $admin_bar ) {
 
 			// Bail if the user is not an admin that can manage options.
 			if ( ! current_user_can( 'manage_options' ) ) {
@@ -938,7 +938,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	 * @since  1.0
 	 * @return CN_Toolbar
 	 */
-	function Connections_Toolbar() {
+	function Connections_Toolbar(): CN_Toolbar {
 
 		return CN_Toolbar::getInstance();
 	}
