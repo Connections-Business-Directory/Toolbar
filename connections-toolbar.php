@@ -96,7 +96,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 */
 		public static function getInstance() {
 
-			if ( ! isset( self::$instance ) && self::$init ) {
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
 
 				self::$instance = $self = new self();
 
