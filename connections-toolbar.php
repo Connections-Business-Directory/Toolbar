@@ -977,5 +977,5 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	 * we'll load with priority 10.1, so we know Connections and its other add-ons will be loaded
 	 * and ready first.
 	 */
-	add_action( 'cn_loaded', 'Connections_Toolbar' );
+	add_action( 'Connections_Directory/Loaded', 'Connections_Toolbar' );
 }
