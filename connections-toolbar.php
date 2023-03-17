@@ -124,8 +124,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 */
 		private static function init() {
 
-			self::defineConstants();
-
 			/*
 			 * Add the toolbar and menu items.
 			 */
@@ -136,28 +134,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			 */
 			add_action( 'wp_head', array( __CLASS__, 'css' ) );
 			add_action( 'admin_head', array( __CLASS__, 'css' ) );
-		}
-
-		/**
-		 * Define the core constants.
-		 *
-		 * @access private
-		 * @since  1.0
-		 */
-		private static function defineConstants() {
-
-			/*
-			 * Version Constants
-			 */
-			define( 'CNTB_CURRENT_VERSION', '1.3' );
-
-			/*
-			 * Core Constants
-			 */
-			define( 'CNTB_DIR_NAME', plugin_basename( dirname( __FILE__ ) ) );
-			define( 'CNTB_BASE_NAME', plugin_basename( __FILE__ ) );
-			define( 'CNTB_PATH', plugin_dir_path( __FILE__ ) );
-			define( 'CNTB_URL', plugin_dir_url( __FILE__ ) );
 		}
 
 		/**
