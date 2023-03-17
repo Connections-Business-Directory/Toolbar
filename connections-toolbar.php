@@ -42,6 +42,34 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		private static $init = TRUE;
 
 		/**
+		 * @var string The absolute path this file.
+		 *
+		 * @since 1.4
+		 */
+		private $file = '';
+
+		/**
+		 * @var string The URL to the plugin's folder.
+		 *
+		 * @since 1.4
+		 */
+		private $url = '';
+
+		/**
+		 * @var string The absolute path to this plugin's folder.
+		 *
+		 * @since 1.4
+		 */
+		private $path = '';
+
+		/**
+		 * @var string The basename of the plugin.
+		 *
+		 * @since 1.4
+		 */
+		private $basename = '';
+
+		/**
 		 * A dummy constructor to prevent class from being loaded more than once.
 		 *
 		 * @access private
@@ -63,7 +91,13 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 
 			if ( ! isset( self::$instance ) && self::$init ) {
 
-				self::$instance = new self;
+				self::$instance = $self = new self();
+
+				$self->file     = __FILE__;
+				$self->url      = plugin_dir_url( $self->file );
+				$self->path     = plugin_dir_path( $self->file );
+				$self->basename = plugin_basename( $self->file );
+
 				self::$instance->init();
 			}
 
