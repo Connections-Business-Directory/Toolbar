@@ -67,6 +67,23 @@ This plugin was inspired by the [EDD Toolbar](https://wordpress.org/plugins/edd-
 
 == Changelog ==
 
+= 1.4 03/14/2023 =
+* TWEAK: Remove use of deprecated `cn_loaded` action hook.
+* TWEAK: Add plugin properties.
+* TWEAK: Utilize `cnText_Domain::register()` to register the text domain.
+* TWEAK: Remove unused global constants.
+* TWEAK: Make plugin singleton a final class.
+* TWEAK: Set plugin version as class constant.
+* TWEAK: Update class singleton instance validation.
+* TWEAK: Do not double initialize the class singleton.
+* TWEAK: Remove unused class property.
+* TWEAK: Update method name to better reflect its function.
+* TWEAK: Update urls to be `https`.
+* OTHER: Update copyright.
+* DEV: Update plugin and README.txt file header.
+* DEV: phpDoc corrections.
+* DEV: Update tested to WP 6.2.
+
 = 1.3 10/31/2022 =
 * TWEAK: Remove use of deprecated `cnFormObjects::tokenURL()` method replaced with `_nonce::url()`.
 * TWEAK: Qualifier can be replaced with an import.
@@ -112,3 +129,6 @@ It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP 
 
 = 1.3 =
 It is recommended to back up before updating. Requires WordPress >= 5.6 and PHP >= 5.6.20 PHP version >= 7.4 recommended.
+
+= 1.4 =
+It is recommended to back up before updating. Requires WordPress >= 5.6 and PHP >= 7.0 PHP version >= 7.4 is recommended.
