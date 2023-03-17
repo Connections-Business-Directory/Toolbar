@@ -32,6 +32,13 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	final class CN_Toolbar {
 
 		/**
+		 * The plugin version.
+		 *
+		 * @since 1.3
+		 */
+		const VERSION = '1.3';
+
+		/**
 		 * @var CN_Toolbar Instance of this class.
 		 */
 		private static $instance;
