@@ -7,13 +7,15 @@
  * @author    Steven A. Zahm
  * @license   GPL-2.0+
  * @link      https://connections-pro.com
- * @copyright 2021 Steven A. Zahm
+ * @copyright 2023 Steven A. Zahm
  *
  * @wordpress-plugin
  * Plugin Name:       Connections Business Directory Extension - Toolbar
  * Plugin URI:        https://connections-pro.com/add-on/toolbar/
  * Description:       An extension for the Connections Business Directory plugin that adds useful links and resources to the WordPress Admin Bar.
- * Version:           1.3
+ * Version:           1.4
+ * Requires at least: 5.6
+ * Requires PHP:      7.0
  * Author:            Steven A. Zahm
  * Author URI:        https://connections-pro.com
  * License:           GPL-2.0+
@@ -27,7 +29,14 @@ use Connections_Directory\Utility\_nonce;
 
 if ( ! class_exists( 'CN_Toolbar' ) ) {
 
-	class CN_Toolbar {
+	final class CN_Toolbar {
+
+		/**
+		 * The plugin version.
+		 *
+		 * @since 1.3
+		 */
+		const VERSION = '1.4';
 
 		/**
 		 * @var CN_Toolbar Instance of this class.
@@ -35,17 +44,37 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		private static $instance;
 
 		/**
-		 * @var bool Init the plugin.
+		 * @var string The absolute path this file.
+		 *
+		 * @since 1.4
 		 */
-		private static $init = TRUE;
+		private $file = '';
+
+		/**
+		 * @var string The URL to the plugin's folder.
+		 *
+		 * @since 1.4
+		 */
+		private $url = '';
+
+		/**
+		 * @var string The absolute path to this plugin's folder.
+		 *
+		 * @since 1.4
+		 */
+		private $path = '';
+
+		/**
+		 * @var string The basename of the plugin.
+		 *
+		 * @since 1.4
+		 */
+		private $basename = '';
 
 		/**
 		 * A dummy constructor to prevent class from being loaded more than once.
 		 *
-		 * @access private
-		 * @since  1.0
-		 * @see    CN_Toolbar::instance()
-		 * @see    CN_Toolbar();
+		 * @since 1.0
 		 */
 		private function __construct() { /* Do nothing here */ }
 
@@ -59,10 +88,29 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 */
 		public static function getInstance() {
 
-			if ( ! isset( self::$instance ) && self::$init ) {
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
 
-				self::$instance = new self;
-				self::$instance->init();
+				$self = new self();
+
+				$self->file     = __FILE__;
+				$self->url      = plugin_dir_url( $self->file );
+				$self->path     = plugin_dir_path( $self->file );
+				$self->basename = plugin_basename( $self->file );
+
+
+				/**
+				 * This should run on the `plugins_loaded` action hook. Since the extension loads on the
+				 * `plugins_loaded` action hook, load immediately.
+				 */
+				cnText_Domain::register(
+					'connections-toolbar',
+					$self->basename,
+					'load'
+				);
+
+				$self->hooks();
+
+				self::$instance = $self;
 			}
 
 			return self::$instance;
@@ -71,22 +119,10 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		/**
 		 * Initiate the plugin.
 		 *
-		 * @access private
-		 * @since  1.0
-		 * @return void
+		 * @internal
+		 * @since 1.0
 		 */
-		private static function init() {
-
-			self::defineConstants();
-
-			/*
-			 * Load translation. NOTE: This should be ran on the init action hook because
-			 * function calls for translatable strings, like __() or _e(), execute before
-			 * the language files are loaded will not be loaded.
-			 *
-			 * NOTE: Any portion of the plugin w/ translatable strings should be bound to the init action hook or later.
-			 */
-			add_action( 'init', array( __CLASS__, 'loadTextdomain' ) );
+		private static function hooks() {
 
 			/*
 			 * Add the toolbar and menu items.
@@ -98,68 +134,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			 */
 			add_action( 'wp_head', array( __CLASS__, 'css' ) );
 			add_action( 'admin_head', array( __CLASS__, 'css' ) );
-		}
-
-		/**
-		 * Define the core constants.
-		 *
-		 * @access private
-		 * @since  1.0
-		 */
-		private static function defineConstants() {
-
-			/*
-			 * Version Constants
-			 */
-			define( 'CNTB_CURRENT_VERSION', '1.3' );
-
-			/*
-			 * Core Constants
-			 */
-			define( 'CNTB_DIR_NAME', plugin_basename( dirname( __FILE__ ) ) );
-			define( 'CNTB_BASE_NAME', plugin_basename( __FILE__ ) );
-			define( 'CNTB_PATH', plugin_dir_path( __FILE__ ) );
-			define( 'CNTB_URL', plugin_dir_url( __FILE__ ) );
-		}
-
-		/**
-		 * Load the plugin translation.
-		 *
-		 * NOTE: Translations ship with the core Connections plugin so by default
-		 * the translations will be loaded from the Connections plugin languages folder
-		 * unless a custom translation exists in the WP_LANG/connections folder.
-		 *
-		 * Credit: Adapted from Ninja Forms / Easy Digital Downloads.
-		 *
-		 * @access private
-		 * @since  1.0
-		 * @uses   apply_filters()
-		 * @uses   get_locale()
-		 * @uses   load_textdomain()
-		 * @uses   load_plugin_textdomain()
-		 */
-		public static function loadTextdomain() {
-
-			// Plugin's unique textdomain string.
-			$textdomain = 'connections-toolbar';
-
-			// Filter for the plugin languages folder.
-			$languagesDirectory = apply_filters( 'connections_toolbar_lang_dir', CNTB_DIR_NAME . '/languages/' );
-
-			// The 'plugin_locale' filter is also used by default in load_plugin_textdomain().
-			$locale = apply_filters( 'plugin_locale', get_locale(), $textdomain );
-
-			// Filter for WordPress languages directory.
-			$wpLanguagesDirectory = apply_filters(
-				'connections_toolbar_wp_lang_dir',
-				WP_LANG_DIR . '/connections/' . sprintf( '%1$s-%2$s.mo', $textdomain, $locale )
-			);
-
-			// Translations: First, look in WordPress' "languages" folder = custom & update-secure!
-			load_textdomain( $textdomain, $wpLanguagesDirectory );
-
-			// Translations: Secondly, look in plugin's "languages" folder = default.
-			load_plugin_textdomain( $textdomain, FALSE, $languagesDirectory );
 		}
 
 		/**
@@ -977,5 +951,5 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 	 * we'll load with priority 10.1, so we know Connections and its other add-ons will be loaded
 	 * and ready first.
 	 */
-	add_action( 'cn_loaded', 'Connections_Toolbar' );
+	add_action( 'Connections_Directory/Loaded', 'Connections_Toolbar' );
 }

@@ -3,17 +3,17 @@ Contributors: shazahm1@hotmail.com
 Donate link: https://connections-pro.com/
 Tags: addresses, address book, addressbook, bio, bios, biographies, business, businesses, business directory, business-directory, business directory plugin, directory plugin, directory widget, church, contact, contacts, connect, connections, directory, directories, hcalendar, hcard, ical, icalendar, image, images, list, lists, listings, member directory, members directory, members directories, microformat, microformats, page, pages, people, profile, profiles, post, posts, plugin, shortcode, staff, user, users, vcard, wordpress business directory, wordpress directory, wordpress directory plugin, wordpress business directory, admin bar, adminbar, administration, connections business directory
 Requires at least: 5.6
-Tested up to: 6.1
-Requires PHP: 5.6.20
-Stable tag: 1.3
+Tested up to: 6.2
+Requires PHP: 7.0
+Stable tag: 1.4
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Adds useful admin links and resources for the Connections Business Directory plugin to the WordPress Toolbar / Admin Bar.
 
 == Description ==
 
-This is an extension plugin for the [Connections Business Directory Plugin](http://wordpress.org/plugins/connections/). Quick click access without having to scroll to all of Connections admin pages from either the admin or the front end for easy management. You can even go to a specific settings tab of filter the entry list with a single click making you life easier.
+This is an extension plugin for the [Connections Business Directory Plugin](https://wordpress.org/plugins/connections/). Quick click access without having to scroll to all of Connections admin pages from either the admin or the front end for easy management. You can even go to a specific settings tab of filter the entry list with a single click making you life easier.
 
 Why not just include this with the plugin as an option? Two reasons, the admin bar has limited space and to limit the amount of core plugin options and code.
 
@@ -21,15 +21,15 @@ Here are some other great **free extensions** (with more on the way) that enhanc
 
 **Utility**
 
-* [Toolbar](http://wordpress.org/plugins/connections-toolbar/) :: Provide quick links to the admin pages from the admin bar.
-* [Login](http://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple-to-use login shortcode and widget.
+* [Toolbar](https://wordpress.org/plugins/connections-toolbar/) :: Provide quick links to the admin pages from the admin bar.
+* [Login](https://wordpress.org/plugins/connections-business-directory-login/) :: Provides a simple-to-use login shortcode and widget.
 
 **Custom Fields**
 
-* [Business Hours](http://wordpress.org/plugins/connections-business-directory-hours/) :: Add the business open hours.
-* [Income Level](http://wordpress.org/plugins/connections-business-directory-income-levels/) :: Add an income level.
-* [Education Level](http://wordpress.org/plugins/connections-business-directory-education-levels/) :: Add an education level.
-* [Languages](http://wordpress.org/plugins/connections-business-directory-languages/) :: Add languages spoken.
+* [Business Hours](https://wordpress.org/plugins/connections-business-directory-hours/) :: Add the business open hours.
+* [Income Level](https://wordpress.org/plugins/connections-business-directory-income-levels/) :: Add an income level.
+* [Education Level](https://wordpress.org/plugins/connections-business-directory-education-levels/) :: Add an education level.
+* [Languages](https://wordpress.org/plugins/connections-business-directory-languages/) :: Add languages spoken.
 
 **Misc**
 
@@ -37,15 +37,15 @@ Here are some other great **free extensions** (with more on the way) that enhanc
 
 **Premium Extensions**
 
-* [Authored](http://connections-pro.com/add-on/authored/) :: Displays a list of blog posts written by the entry on their profile page.
-* [Contact](http://connections-pro.com/add-on/contact/) :: Displays a contact form on the entry's profile page to allow your visitors to contact the entry without revealing their email address.
-* [CSV Import](http://connections-pro.com/add-on/csv-import/) :: Bulk import your data in to your directory.
-* [Custom Category Order](http://connections-pro.com/add-on/custom-category-order/) :: Order your categories exactly as you need them.
-* [Form](http://connections-pro.com/add-on/form/) :: Allow site visitor to submit entries to your directory. Also provides frontend editing support.
-* [Link](http://connections-pro.com/add-on/link/) :: Links a WordPress user to an entry so that user can maintain their entry with or without moderation.
-* [ROT13 Encryption](http://connections-pro.com/add-on/rot13-email-encryption/) :: Protect email addresses from being harvested from your business directory by spam bots.
-* [SiteShot](http://connections-pro.com/add-on/siteshot/) :: Show a screen capture of the entry's website.
-* [Widget Pack](http://connections-pro.com/add-on/widget-pack/) :: A set of feature rich, versatile and highly configurable widgets that can be used to enhance your directory.
+* [Authored](https://connections-pro.com/add-on/authored/) :: Displays a list of blog posts written by the entry on their profile page.
+* [Contact](https://connections-pro.com/add-on/contact/) :: Displays a contact form on the entry's profile page to allow your visitors to contact the entry without revealing their email address.
+* [CSV Import](https://connections-pro.com/add-on/csv-import/) :: Bulk import your data in to your directory.
+* [Custom Category Order](https://connections-pro.com/add-on/custom-category-order/) :: Order your categories exactly as you need them.
+* [Form](https://connections-pro.com/add-on/form/) :: Allow site visitor to submit entries to your directory. Also provides frontend editing support.
+* [Link](https://connections-pro.com/add-on/link/) :: Links a WordPress user to an entry so that user can maintain their entry with or without moderation.
+* [ROT13 Encryption](https://connections-pro.com/add-on/rot13-email-encryption/) :: Protect email addresses from being harvested from your business directory by spam bots.
+* [SiteShot](https://connections-pro.com/add-on/siteshot/) :: Show a screen capture of the entry's website.
+* [Widget Pack](https://connections-pro.com/add-on/widget-pack/) :: A set of feature rich, versatile and highly configurable widgets that can be used to enhance your directory.
 
 == Installation ==
 
@@ -59,13 +59,30 @@ This will only show up in the admin bar if the user logged in has the `manage_op
 
 == Screenshots ==
 
-[Screenshots can be found here.](http://connections-pro.com/add-on/toolbar/)
+[Screenshots can be found here.](https://connections-pro.com/add-on/toolbar/)
 
 == Credits ==
 
-This plugin was inspired by the [EDD Toolbar](http://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](http://profiles.wordpress.org/daveshine/).
+This plugin was inspired by the [EDD Toolbar](https://wordpress.org/plugins/edd-toolbar/) plugin by�[daveshine (David Decker)](https://profiles.wordpress.org/daveshine/).
 
 == Changelog ==
+
+= 1.4 03/14/2023 =
+* TWEAK: Remove use of deprecated `cn_loaded` action hook.
+* TWEAK: Add plugin properties.
+* TWEAK: Utilize `cnText_Domain::register()` to register the text domain.
+* TWEAK: Remove unused global constants.
+* TWEAK: Make plugin singleton a final class.
+* TWEAK: Set plugin version as class constant.
+* TWEAK: Update class singleton instance validation.
+* TWEAK: Do not double initialize the class singleton.
+* TWEAK: Remove unused class property.
+* TWEAK: Update method name to better reflect its function.
+* TWEAK: Update urls to be `https`.
+* OTHER: Update copyright.
+* DEV: Update plugin and README.txt file header.
+* DEV: phpDoc corrections.
+* DEV: Update tested to WP 6.2.
 
 = 1.3 10/31/2022 =
 * TWEAK: Remove use of deprecated `cnFormObjects::tokenURL()` method replaced with `_nonce::url()`.
@@ -112,3 +129,6 @@ It is recommended to back up before updating. Requires WordPress >= 5.1 and PHP 
 
 = 1.3 =
 It is recommended to back up before updating. Requires WordPress >= 5.6 and PHP >= 5.6.20 PHP version >= 7.4 recommended.
+
+= 1.4 =
+It is recommended to back up before updating. Requires WordPress >= 5.6 and PHP >= 7.0 PHP version >= 7.4 is recommended.
