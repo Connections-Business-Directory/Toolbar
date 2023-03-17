@@ -74,10 +74,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		/**
 		 * A dummy constructor to prevent class from being loaded more than once.
 		 *
-		 * @access private
-		 * @since  1.0
-		 * @see    CN_Toolbar::instance()
-		 * @see    CN_Toolbar();
+		 * @since 1.0
 		 */
 		private function __construct() { /* Do nothing here */ }
 
@@ -122,9 +119,8 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		/**
 		 * Initiate the plugin.
 		 *
-		 * @access private
-		 * @since  1.0
-		 * @return void
+		 * @internal
+		 * @since 1.0
 		 */
 		private static function init() {
 
