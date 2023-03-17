@@ -29,7 +29,7 @@ use Connections_Directory\Utility\_nonce;
 
 if ( ! class_exists( 'CN_Toolbar' ) ) {
 
-	class CN_Toolbar {
+	final class CN_Toolbar {
 
 		/**
 		 * @var CN_Toolbar Instance of this class.
