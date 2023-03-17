@@ -108,7 +108,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'load'
 				);
 
-				$self->init();
+				$self->hooks();
 
 				self::$instance = $self;
 			}
@@ -122,7 +122,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		 * @internal
 		 * @since 1.0
 		 */
-		private static function init() {
+		private static function hooks() {
 
 			/*
 			 * Add the toolbar and menu items.
