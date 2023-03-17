@@ -98,7 +98,7 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
 
-				self::$instance = $self = new self();
+				$self = new self();
 
 				$self->file     = __FILE__;
 				$self->url      = plugin_dir_url( $self->file );
@@ -116,7 +116,9 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 					'load'
 				);
 
-				self::$instance->init();
+				$self->init();
+
+				self::$instance = $self;
 			}
 
 			return self::$instance;
