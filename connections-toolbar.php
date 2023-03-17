@@ -44,11 +44,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		private static $instance;
 
 		/**
-		 * @var bool Init the plugin.
-		 */
-		private static $init = TRUE;
-
-		/**
 		 * @var string The absolute path this file.
 		 *
 		 * @since 1.4
