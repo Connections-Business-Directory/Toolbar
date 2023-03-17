@@ -98,6 +98,17 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 				$self->path     = plugin_dir_path( $self->file );
 				$self->basename = plugin_basename( $self->file );
 
+
+				/**
+				 * This should run on the `plugins_loaded` action hook. Since the extension loads on the
+				 * `plugins_loaded` action hook, load immediately.
+				 */
+				cnText_Domain::register(
+					'connections-toolbar',
+					$self->basename,
+					'load'
+				);
+
 				self::$instance->init();
 			}
 
@@ -114,15 +125,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 		private static function init() {
 
 			self::defineConstants();
-
-			/*
-			 * Load translation. NOTE: This should be ran on the init action hook because
-			 * function calls for translatable strings, like __() or _e(), execute before
-			 * the language files are loaded will not be loaded.
-			 *
-			 * NOTE: Any portion of the plugin w/ translatable strings should be bound to the init action hook or later.
-			 */
-			add_action( 'init', array( __CLASS__, 'loadTextdomain' ) );
 
 			/*
 			 * Add the toolbar and menu items.
@@ -156,46 +158,6 @@ if ( ! class_exists( 'CN_Toolbar' ) ) {
 			define( 'CNTB_BASE_NAME', plugin_basename( __FILE__ ) );
 			define( 'CNTB_PATH', plugin_dir_path( __FILE__ ) );
 			define( 'CNTB_URL', plugin_dir_url( __FILE__ ) );
-		}
-
-		/**
-		 * Load the plugin translation.
-		 *
-		 * NOTE: Translations ship with the core Connections plugin so by default
-		 * the translations will be loaded from the Connections plugin languages folder
-		 * unless a custom translation exists in the WP_LANG/connections folder.
-		 *
-		 * Credit: Adapted from Ninja Forms / Easy Digital Downloads.
-		 *
-		 * @access private
-		 * @since  1.0
-		 * @uses   apply_filters()
-		 * @uses   get_locale()
-		 * @uses   load_textdomain()
-		 * @uses   load_plugin_textdomain()
-		 */
-		public static function loadTextdomain() {
-
-			// Plugin's unique textdomain string.
-			$textdomain = 'connections-toolbar';
-
-			// Filter for the plugin languages folder.
-			$languagesDirectory = apply_filters( 'connections_toolbar_lang_dir', CNTB_DIR_NAME . '/languages/' );
-
-			// The 'plugin_locale' filter is also used by default in load_plugin_textdomain().
-			$locale = apply_filters( 'plugin_locale', get_locale(), $textdomain );
-
-			// Filter for WordPress languages directory.
-			$wpLanguagesDirectory = apply_filters(
-				'connections_toolbar_wp_lang_dir',
-				WP_LANG_DIR . '/connections/' . sprintf( '%1$s-%2$s.mo', $textdomain, $locale )
-			);
-
-			// Translations: First, look in WordPress' "languages" folder = custom & update-secure!
-			load_textdomain( $textdomain, $wpLanguagesDirectory );
-
-			// Translations: Secondly, look in plugin's "languages" folder = default.
-			load_plugin_textdomain( $textdomain, FALSE, $languagesDirectory );
 		}
 
 		/**
